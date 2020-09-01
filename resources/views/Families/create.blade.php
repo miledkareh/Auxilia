@@ -53,7 +53,15 @@
           @else
           <input type="hidden" name="family_id" value="0" />
             @endif
-
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="Ref">Ref#</label>
+                  <input type="text" class="form-control"  name="Ref" id="Ref" value="{{ isset($family) ? $family->Ref : old('Ref') }}">
+                </div>
+               
+               
+            </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-4">

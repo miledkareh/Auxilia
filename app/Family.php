@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Family extends Model
 {
     use SoftDeletes;
-    protected $fillable=['MotherName',
+    protected $fillable=['Ref','MotherName',
     'Address','Region','Email','Mobile','Phone','SocialHelper','Religion',
     'FamilyName','Date','Street','Place','Building','Floor','RelativeName',
     'LevelOfStudy','DrivingLicense','Car','CompanyName','CompanyLocation','PaymentMode',

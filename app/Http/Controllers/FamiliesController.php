@@ -394,6 +394,7 @@ public function deleteChangement($id){
     public function store(AddFamiliesRequest $request)
     {
       $insertid = DB::table('families')->insertGetId([ 
+          'Ref' => $request->Ref,
             'MotherName' => $request->MotherName,
             'Address' => $request->Address,
             'Region' => $request->Region,
@@ -464,9 +465,14 @@ public function deleteChangement($id){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFamiliesRequest $request,  Family $family)
+    public function update(Request $request,  Family $family)
     {
+      $this->validate($request,[
+        'Ref'=> 'required|unique:families,id,'.$family->id,
+        'MotherName'=> 'required'
+    ]);
         $family->Update([
+          'Ref' => $request->Ref,
             'MotherName' => $request->MotherName,
             'Address' => $request->Address,
             'Region' => $request->Region,

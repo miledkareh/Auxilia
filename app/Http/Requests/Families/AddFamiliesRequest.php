@@ -24,6 +24,7 @@ class AddFamiliesRequest extends FormRequest
     public function rules()
     {
         return [
+            'Ref'=> 'required:unique:families',
             'MotherName'=> 'required'
         ];
     }

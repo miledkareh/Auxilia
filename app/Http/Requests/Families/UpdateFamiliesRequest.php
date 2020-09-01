@@ -23,8 +23,6 @@ class UpdateFamiliesRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'MotherName'=> 'required'
-        ];
+       
     }
 }
