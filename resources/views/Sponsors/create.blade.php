@@ -84,7 +84,15 @@
               <div class="row">
                 <div class="col-md-6">
                   <label for="Coordinateur">Coordinateur</label>
-                  <input type="text" class="form-control" placeholder="Coordinateur "  name="Coordinateur" id="Coordinateur" value="{{ isset($sponsor) ? $sponsor->Coordinateur : old('Coordinateur') }}">
+                  <select type="text" class="form-control"   name="Coordinateur" id="Coordinateur">
+                  @foreach($users as $user)
+                 <option value="{{$user->id}}" 
+                 @if(isset($sponsor) && $sponsor->Coordinateur == $user->id)
+                 selected
+                 @endif
+                 >{{$user->name}}</option>
+              @endforeach
+                  </select>
                 </div>
                 <div class="col-md-6">
                   <label for="Encaisseur">Encaisseur</label>

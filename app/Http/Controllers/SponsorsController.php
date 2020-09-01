@@ -7,6 +7,7 @@ use App\Http\Requests\Sponsors\AddSponsorsRequest;
 use App\Http\Requests\Sponsors\UpdateSponsorsRequest;
 use Illuminate\Support\Facades\DB;
 use App\Sponsor;
+use App\User;
 class SponsorsController extends Controller
 {
 
@@ -31,7 +32,7 @@ class SponsorsController extends Controller
      */
     public function create()
     {
-        return view('Sponsors.create');
+        return view('Sponsors.create')->with('users', User::all());
     }
 
     /**
@@ -78,7 +79,7 @@ class SponsorsController extends Controller
      */
     public function edit(Sponsor $sponsor)
     {
-        return view('Sponsors.create')->with('sponsor', $sponsor);
+        return view('Sponsors.create')->with('sponsor', $sponsor)->with('users', User::all());
     }
 
     /**

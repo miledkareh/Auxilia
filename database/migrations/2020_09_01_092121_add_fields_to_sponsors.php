@@ -14,11 +14,11 @@ class AddFieldsToSponsors extends Migration
     public function up()
     {
         Schema::table('sponsors', function (Blueprint $table) {
-            $table->string('Coordinateur')->default('');
-            $table->string('Encaisseur')->default('');
-            $table->string('SouhaitsDuDonateur')->default('');
+            $table->integer('Coordinateur')->default(0);
+            $table->string('Encaisseur')->nullable();
+            $table->string('SouhaitsDuDonateur')->nullable();
             $table->timestamp('FirstPaymentDate')->nullable();
-            $table->string('Delegue')->default('');
+            $table->string('Delegue')->nullable();
         });
     }
 
