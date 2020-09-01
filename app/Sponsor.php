@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Sponsor extends Model
 {
     use SoftDeletes;
-    protected $fillable=['Fullname','Address','Address2','Email','Mobile','Phone','Delegue','Coordinateur','Encaisseur','SouhaitsDuDonateur','FirstPaymentDate'];
+    protected $fillable=['Fullname','Address','Address2','Email','Mobile','Phone','Delegue','Coordinateur','Encaisseur','SouhaitsDuDonateur','FirstPaymentDate','PaymentTerm'];
 
 public function accounts()
 {

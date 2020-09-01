@@ -22,7 +22,7 @@ class SponsorsController extends Controller
      */
     public function index()
     {
-        return view('Sponsors.index')->with('sponsors',DB::select("select *,(select sum(cDebit)-sum(cCredit) from accounts where sponsor_id=sponsors.id) as balance from sponsors where isnull(deleted_at)"));
+        return view('Sponsors.index')->with('sponsors',DB::select("select *,TIMESTAMPDIFF(MONTH, (select max(Dat) from accounts where sponsor_id=sponsors.id and debit >0 and isnull(deleted_at)), CURRENT_DATE()) as Time,(select sum(cDebit)-sum(cCredit) from accounts where sponsor_id=sponsors.id) as balance from sponsors where isnull(deleted_at)"));
     }
 
     /**
@@ -54,7 +54,8 @@ class SponsorsController extends Controller
             'Coordinateur' => $request->Coordinateur,
             'Encaisseur' => $request->Encaisseur,
             'SouhaitsDuDonateur' => $request->SouhaitsDuDonateur,
-            'FirstPaymentDate' => $request->FirstPaymentDate
+            'FirstPaymentDate' => $request->FirstPaymentDate,
+            'PaymentTerm' => $request->PaymentTerm
            
         ]);
         return redirect(route('sponsors.index'));
@@ -102,7 +103,8 @@ class SponsorsController extends Controller
             'Coordinateur' => $request->Coordinateur,
             'Encaisseur' => $request->Encaisseur,
             'SouhaitsDuDonateur' => $request->SouhaitsDuDonateur,
-            'FirstPaymentDate' => $request->FirstPaymentDate
+            'FirstPaymentDate' => $request->FirstPaymentDate,
+            'PaymentTerm' => $request->PaymentTerm
         ]);
         return redirect(route('sponsors.index'));
     }

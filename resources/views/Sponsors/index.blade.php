@@ -19,6 +19,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th></th>
                   <th>Fullname</th>
                   <th>Address</th>
                   <th>Email</th>
@@ -31,6 +32,10 @@
                 <tbody>
                 @foreach($sponsors as $sponsor)
                 <tr>
+                <td>@if($sponsor->Time > 2)
+                  <span class="fa fa-flag" title="It has been more than 2 months since the last payment" style="color:red; cursor:pointer"></span>
+                  @endif
+                  </td>
                   <td>{{$sponsor->Fullname}}</td>
                   <td>{{$sponsor->Address}}</td>
                   <td>{{$sponsor->Email}}</td>
