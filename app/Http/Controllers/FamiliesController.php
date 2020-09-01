@@ -469,7 +469,8 @@ public function deleteChangement($id){
     {
       $this->validate($request,[
         'Ref'=> 'required|unique:families,id,'.$family->id,
-        'MotherName'=> 'required'
+        'MotherName'=> 'required',
+        'Region'=>'required'
     ]);
         $family->Update([
           'Ref' => $request->Ref,

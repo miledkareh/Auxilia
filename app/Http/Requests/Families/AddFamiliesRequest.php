@@ -25,7 +25,8 @@ class AddFamiliesRequest extends FormRequest
     {
         return [
             'Ref'=> 'required:unique:families',
-            'MotherName'=> 'required'
+            'MotherName'=> 'required',
+            'Region'=>'required'
         ];
     }
 }
