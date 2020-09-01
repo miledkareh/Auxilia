@@ -40,11 +40,15 @@
             @endif
             <div class="form-group">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <label for="Fullname">Fullname</label>
                   <input type="text" class="form-control"  name="Fullname" id="Fullname" value="{{ isset($sponsor) ? $sponsor->Fullname : old('Fullname') }}">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                  <label for="Delegue">Delegué</label>
+                  <input type="text" class="form-control" placeholder="Delegue"  name="Delegue" id="Delegue" value="{{ isset($sponsor) ? $sponsor->Delegue : old('Delegue') }}">
+                </div>
+                <div class="col-md-4">
                   <label for="Email">Email</label>
                   <input type="email" class="form-control" placeholder="example@example.com"  name="Email" id="Email" value="{{ isset($sponsor) ? $sponsor->Email : old('Email') }}">
                 </div>
@@ -54,11 +58,11 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-md-6">
-                  <label for="Address">Address</label>
+                  <label for="Address">Address (B)</label>
                   <textarea type="text" class="form-control"  name="Address" id="Address" row="3">{{ isset($sponsor) ? $sponsor->Address : old('Address') }}</textarea>
                 </div>
                 <div class="col-md-6">
-                  <label for="Address2">Address 2</label>
+                  <label for="Address2">Address (D)</label>
                   <textarea type="text" class="form-control"  name="Address2" id="Address2" row="3">{{ isset($sponsor) ? $sponsor->Address2 : old('Address2') }}</textarea>
                 </div>
               </div>
@@ -76,7 +80,31 @@
                 </div>
               </div>
             </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="Coordinateur">Coordinateur</label>
+                  <input type="text" class="form-control" placeholder="Coordinateur "  name="Coordinateur" id="Coordinateur" value="{{ isset($sponsor) ? $sponsor->Coordinateur : old('Coordinateur') }}">
+                </div>
+                <div class="col-md-6">
+                  <label for="Encaisseur">Encaisseur</label>
+                  <input type="text" class="form-control" placeholder="Encaisseur"  name="Encaisseur" id="Encaisseur" value="{{ isset($sponsor) ? $sponsor->Encaisseur : old('Encaisseur') }}">
+                </div>
+              </div>
+            </div>
 
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="SouhaitsDuDonateur">Souhaits du donateur</label>
+                  <input type="text" class="form-control" placeholder="Souhaits du donateur "  name="SouhaitsDuDonateur" id="SouhaitsDuDonateur" value="{{ isset($sponsor) ? $sponsor->SouhaitsDuDonateur : old('SouhaitsDuDonateur') }}">
+                </div>
+                <div class="col-md-6">
+                  <label for="FirstPaymentDate">Date du 1er paiment</label>
+                  <input type="date" class="form-control"  name="FirstPaymentDate" id="FirstPaymentDate" value="{{ isset($sponsor) ? Carbon\Carbon::parse($sponsor->FirstPaymentDate)->format('Y-m-d'): old('FirstPaymentDate') }}">
+                </div>
+              </div>
+            </div>
              <div class="form-group">
             
              <button type="submit" class="btn btn-success float-right">Save</button>

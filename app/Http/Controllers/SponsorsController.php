@@ -49,6 +49,11 @@ class SponsorsController extends Controller
             'Phone' => $request->Phone,
             'Mobile' => $request->Mobile,
             'Email' => $request->Email,
+            'Delegue' => $request->Delegue,
+            'Coordinateur' => $request->Coordinateur,
+            'Encaisseur' => $request->Encaisseur,
+            'SouhaitsDuDonateur' => $request->SouhaitsDuDonateur,
+            'FirstPaymentDate' => $request->FirstPaymentDate
            
         ]);
         return redirect(route('sponsors.index'));
@@ -91,7 +96,12 @@ class SponsorsController extends Controller
             'Address2' => $request->Address2,
             'Phone' => $request->Phone,
             'Mobile' => $request->Mobile,
-            'Email' => $request->Email
+            'Email' => $request->Email,
+            'Delegue' => $request->Delegue,
+            'Coordinateur' => $request->Coordinateur,
+            'Encaisseur' => $request->Encaisseur,
+            'SouhaitsDuDonateur' => $request->SouhaitsDuDonateur,
+            'FirstPaymentDate' => $request->FirstPaymentDate
         ]);
         return redirect(route('sponsors.index'));
     }
