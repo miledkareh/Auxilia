@@ -160,6 +160,12 @@
                   <p>Changements</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('YearlySpecialSupports.index')}}" id="menu_YearlySpecialSupports" class="nav-link  menu_YearlySpecialSupports menu" target="iframe">
+                  <i class="fa fa-list nav-icon"></i>
+                  <p>Yearly Special Supports</p>
+                </a>
+              </li>
             </ul>
           </li>
         

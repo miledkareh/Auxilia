@@ -112,3 +112,5 @@ Route::post('donationreport/filter', 'DonationReportController@filter')->name('d
 Route::resource('donationreport', 'DonationReportController');
 Route::post('membersreport/filter', 'MembersReportController@filter')->name('membersreport.filter');
 Route::resource('membersreport', 'MembersReportController');
+
+Route::resource('YearlySpecialSupports', 'YearlySpecialSupportsController');
